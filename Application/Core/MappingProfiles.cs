@@ -1,4 +1,3 @@
-using Application.Activities;
 using AutoMapper;
 using Domain;
 
