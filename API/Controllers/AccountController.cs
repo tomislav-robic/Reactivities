@@ -44,7 +44,8 @@ namespace API.Controllers
         {
             if (await _userManager.FindByNameAsync(registerDto.Username) != null)
             {
-                return BadRequest("Username taken");
+                ModelState.AddModelError("username", "Username taken");
+                return BadRequest(ModelState);
             }
 
             var user = new AppUser
